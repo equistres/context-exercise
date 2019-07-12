@@ -1,28 +1,27 @@
 import React, { Component, Fragment } from 'react'
-import Consumer from './store'
+import WrapperConsumer from './store'
 import Toolbar from './toolbar'
 
-export default class Users extends Component {
+class Users extends Component {
     render() {
+        //descompongo la variable context en user y changeName
+        const { context: { user, changeName } } = this.props
         return (
             <Fragment>
-            <Toolbar/>
-            <Consumer>
-                {
-                    value => (
-                        <div>
-                            <b>Information</b>
-                            <br/>
-                            <p>Username: {value.user.userName}</p>
-                            <p>Age: {value.user.age}</p>
-                            <p>City: {value.user.city}</p>
-                            <button onClick={value.changeName}>Cambiar</button>
-                        </div>
-                    )
-                }
-            </Consumer>
+                <Toolbar/>
+                <div>
+                    <b>Information</b>
+                    <br />
+                    <p>Username: {user.userName}</p>
+                    <p>Age: {user.age}</p>
+                    <p>City: {user.city}</p>
+                    <button onClick={changeName}>Cambiar</button>
+                </div>
             </Fragment>
         )
     }
 }
+
+//envuelvo a la clase users en el wrapper que es el Consumer (HOC - High Order Component)
+export default WrapperConsumer(Users)
 

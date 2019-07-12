@@ -6,6 +6,7 @@ class App extends Component {
     return (
       <Fragment>
         <Toolbar />
+        esta es una home
       </Fragment>
     );
   }

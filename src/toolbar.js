@@ -1,17 +1,12 @@
 import React from 'react'
-import Consumer from './store'
-import {Link} from 'react-router-dom';
+import WrapperConsumer from './store'
+import { Link } from 'react-router-dom';
 
-export default () => (
-   <Consumer>
-      {
-         ({user:{name}}) => (
-            <div>
-               <h1>Bienvenido {name}</h1>
-               <br/>
-               <Link to='/'>Home</Link> | <Link to='/users'>Users</Link>
-            </div>
-         )
-      }
-   </Consumer>
+const Toolbox = ({ context: { user } }) => (
+   <div>
+      <h1>Bienvenido {user.name}</h1>
+      <br />
+      <Link to='/'>Home</Link> | <Link to='/users'>Users</Link> | <Link to='/posts'>Posts</Link>
+   </div>
 )
+export default WrapperConsumer(Toolbox)
