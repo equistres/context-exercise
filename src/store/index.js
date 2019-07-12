@@ -5,7 +5,7 @@ const { Provider, Consumer } = createContext()
 class ContextStore extends Component {
    render() {
       return (
-         <Provider value={{ user: { name: 'John Doe' } }}>
+         <Provider value={{ user: { name: 'John Doe', age: '37', city: "Manhattan", userName:"jdoe" } }}>
             {this.props.comp}
          </ Provider>
       )
