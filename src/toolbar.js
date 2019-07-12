@@ -9,7 +9,7 @@ export default () => (
             <div>
                <h1>Bienvenido {name}</h1>
                <br/>
-               <Link to='/users'>Users</Link>
+               <Link to='/'>Home</Link> | <Link to='/users'>Users</Link>
             </div>
          )
       }

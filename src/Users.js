@@ -9,13 +9,14 @@ export default class Users extends Component {
             <Toolbar/>
             <Consumer>
                 {
-                    ({ user }) => (
+                    value => (
                         <div>
                             <b>Information</b>
                             <br/>
-                            <p>Username: {user.userName}</p>
-                            <p>Age: {user.age}</p>
-                            <p>City: {user.city}</p>
+                            <p>Username: {value.user.userName}</p>
+                            <p>Age: {value.user.age}</p>
+                            <p>City: {value.user.city}</p>
+                            <button onClick={value.changeName}>Cambiar</button>
                         </div>
                     )
                 }
